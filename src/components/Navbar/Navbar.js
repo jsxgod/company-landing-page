@@ -4,7 +4,10 @@ import {
     NavbarContainer, 
     NavLogo, 
     NavIcon, 
-    HamburgerMenuIcon
+    HamburgerMenuIcon,
+    NavMenu,
+    NavItem,
+    NavLinks,
 } from './Navbar.elements';
 
 import { FaTimes, FaBars } from 'react-icons/fa';
@@ -28,6 +31,23 @@ export const Navbar = () => {
                     <HamburgerMenuIcon onClick={handleClick}>
                         {click ? <FaTimes/> : <FaBars/>}
                     </HamburgerMenuIcon>
+                    <NavMenu onClick={handleClick} click={click}>
+                        <NavItem>
+                            <NavLinks to='/'>
+                                Home
+                            </NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/services'>
+                                Services
+                            </NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/products'>
+                                Products
+                            </NavLinks>
+                        </NavItem>
+                    </NavMenu>
                 </NavbarContainer>
             </Nav>
         </IconContext.Provider>
