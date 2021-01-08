@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { Button } from '../../globalStyles';
 import { 
     Nav, 
     NavbarContainer, 
@@ -8,6 +9,8 @@ import {
     NavMenu,
     NavItem,
     NavLinks,
+    NavItemBtn,
+    NavBtnLink,
 } from './Navbar.elements';
 
 import { FaTimes, FaBars } from 'react-icons/fa';
@@ -15,23 +18,42 @@ import { IconContext } from 'react-icons/lib';
 
 export const Navbar = () => {
     const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
     
     const handleClick = () => {
         setClick(!click);
     }
 
+    const hideMobileMenu = () => {
+        setClick(false);
+    }
+
+    const showButton = () => {
+        if(window.innerWidth <= 960) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    }
+
+    useEffect(() => {
+        showButton()
+    }, [])
+
+    window.addEventListener('resize', showButton);
+
     return (
         <IconContext.Provider value={{color: '#fff'}}>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/">
+                    <NavLogo to="/" onClick={hideMobileMenu}>
                         <NavIcon/>
                             COMPANY
                     </NavLogo>
                     <HamburgerMenuIcon onClick={handleClick}>
                         {click ? <FaTimes/> : <FaBars/>}
                     </HamburgerMenuIcon>
-                    <NavMenu onClick={handleClick} click={click}>
+                    <NavMenu onClick={hideMobileMenu} click={click}>
                         <NavItem>
                             <NavLinks to='/'>
                                 Home
@@ -47,6 +69,21 @@ export const Navbar = () => {
                                 Products
                             </NavLinks>
                         </NavItem>
+                        <NavItemBtn>
+                            {button ? (
+                                <NavBtnLink to="/sign-up">
+                                    <Button primary>
+                                        SIGN UP
+                                    </Button>
+                                </NavBtnLink>
+                            ) : (
+                                <NavBtnLink to="/sign-up">
+                                    <Button onClick={hideMobileMenu} fontBig primary>
+                                        SIGN UP
+                                    </Button>
+                                </NavBtnLink>
+                            )}
+                        </NavItemBtn>
                     </NavMenu>
                 </NavbarContainer>
             </Nav>
