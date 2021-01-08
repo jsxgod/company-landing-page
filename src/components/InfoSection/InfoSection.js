@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Container } from '../../globalStyles';
-import { InfoColumn, InfoRow, InfoSec, TextWrapper, TopLine, Heading, Subtitle } from './InfoSection.elements';
+import { InfoColumn, InfoRow, InfoSec, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img } from './InfoSection.elements';
 
 const InfoSection = ({
     primary,
@@ -14,6 +14,9 @@ const InfoSection = ({
     lightTextDesc,
     description,
     buttonLabel,
+    img,
+    alt,
+    start,
 }) => {
     /*let [darkMode, setDarkMode] = useState(true);*/
 
@@ -34,6 +37,11 @@ const InfoSection = ({
                                 </Button>
                             </Link>
                         </TextWrapper>
+                    </InfoColumn>
+                    <InfoColumn>
+                        <ImgWrapper start={start}>
+                            <Img src={img} alt={alt}/>
+                        </ImgWrapper>
                     </InfoColumn>
                 </InfoRow>
             </Container>
