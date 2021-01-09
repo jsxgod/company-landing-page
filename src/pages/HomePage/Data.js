@@ -41,7 +41,7 @@ export const infoSectionDataThree = {
     lightText: isDarkMode,
     headline: 'Work with the best clients',
     lightTextDesc: isDarkMode,
-    description: 'Let us find only the best clients for your business. With us your clients will always be satisfied because we tailored them with your company\'s product in mind.',
+    description: 'Let us find only the best clients for your business. With us your clients will always be satisfied - we carefully chose them with your company\'s product in mind.',
     buttonLabel: 'Get Started',
     img: require('../../assets/images/agreement.svg').default,
     alt: 'Image',
