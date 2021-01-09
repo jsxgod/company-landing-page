@@ -11,15 +11,18 @@ import {
     NavLinks,
     NavItemBtn,
     NavBtnLink,
+    NavThemeIcon,
 } from './Navbar.elements';
 
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import { useTheme } from '../theme';
 
 export const Navbar = () => {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-    
+    const [theme, themeToggler] = useTheme();
+
     const handleClick = () => {
         setClick(!click);
     }
@@ -40,6 +43,11 @@ export const Navbar = () => {
         showButton()
     }, [])
 
+    const toggleTheme = () => {
+        themeToggler();
+        window.location.reload();
+    }
+
     window.addEventListener('resize', showButton);
 
     return (
@@ -54,6 +62,11 @@ export const Navbar = () => {
                         {click ? <FaTimes/> : <FaBars/>}
                     </HamburgerMenuIcon>
                     <NavMenu onClick={hideMobileMenu} click={click}>
+                        <NavItem onClick={toggleTheme}>
+                            <NavLinks>
+                                <NavThemeIcon/>
+                            </NavLinks>
+                        </NavItem>
                         <NavItem>
                             <NavLinks to='/'>
                                 Home
@@ -72,13 +85,13 @@ export const Navbar = () => {
                         <NavItemBtn>
                             {button ? (
                                 <NavBtnLink to="/sign-up">
-                                    <Button primary>
+                                    <Button primary={true}>
                                         SIGN UP
                                     </Button>
                                 </NavBtnLink>
                             ) : (
                                 <NavBtnLink to="/sign-up">
-                                    <Button onClick={hideMobileMenu} fontBig primary>
+                                    <Button onClick={hideMobileMenu} fontBig primary={false}>
                                         SIGN UP
                                     </Button>
                                 </NavBtnLink>

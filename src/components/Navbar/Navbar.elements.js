@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../../globalStyles';
-import { FaReact } from 'react-icons/fa'
+import { FaMoon, FaReact } from 'react-icons/fa'
 
 export const Nav = styled.nav`
 background: #101522;
@@ -34,6 +34,10 @@ align-items: center;
 `;
 
 export const NavIcon = styled(FaReact)`
+margin-right: 0.5rem;
+`;
+
+export const NavThemeIcon = styled(FaMoon)`
 margin-right: 0.5rem;
 `;
 
