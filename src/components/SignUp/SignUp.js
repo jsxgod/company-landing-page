@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import { Button } from '../../globalStyles'
 import {
     SignUpContainer,
@@ -15,14 +14,14 @@ const SignUp = () => {
     <SignUpContainer>
         <SignUpSubscription>
             <SignUpSubHeading>
-                Join our membership to elevate your business today
+                Join our montly membership to elevate your business starting today
             </SignUpSubHeading>
             <SignUpSubText>
                 You can unsubscribe at any given moment
             </SignUpSubText>
             <Form>
                 <FormInput name='email' type='email' placeholder='Your Email' />
-                <Button fontBig>Subscribe</Button>
+                <Button primary fontBig>Subscribe</Button>
             </Form>
         </SignUpSubscription>
     </SignUpContainer>
