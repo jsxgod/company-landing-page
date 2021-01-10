@@ -76,4 +76,16 @@ export const Img = styled.img`
     vertical-align: middle;
     display: inline-block;
     max-height: 500px;
+    transition: 0.25s ease-out;
+
+    &:hover {
+        transform: scale(1.06);
+        transition: all 0.3s ease-out;
+    }
+
+    @media screen and (max-width: 960px) {
+        &:hover {
+            transform: none;
+        }
+    }
 `;

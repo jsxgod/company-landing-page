@@ -1,13 +1,26 @@
 import React from 'react'
-import {InfoSection} from '../../components';
+import {InfoSection, Cards} from '../../components';
 import {infoSectionDataOne, infoSectionDataTwo, infoSectionDataThree} from './Data';
+import { Element } from 'react-scroll';
 
 const Home = () => {
     return (
         <>
-           <InfoSection {...infoSectionDataOne}/> 
-           <InfoSection {...infoSectionDataTwo}/> 
-           <InfoSection {...infoSectionDataThree}/> 
+            <Element name="info-section-1">
+                <InfoSection {...infoSectionDataOne} /> 
+            </Element>
+
+            <Element name="info-section-2">
+                <InfoSection {...infoSectionDataTwo}/> 
+            </Element>
+           
+           <Element name="cards">
+                <Cards />
+           </Element>
+
+           <Element name="info-section-3">
+                <InfoSection {...infoSectionDataThree}/>
+           </Element>
         </>
     )
 }

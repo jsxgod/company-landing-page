@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import { Button, Container } from '../../globalStyles';
-import { InfoColumn, InfoRow, InfoSec, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img } from './InfoSection.elements';
+import { Link } from 'react-scroll'
+import { Button, Container } from '../../globalStyles'
+import { InfoColumn, InfoRow, InfoSec, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img } from './InfoSection.elements'
 
 const InfoSection = ({
     primary,
@@ -31,7 +31,7 @@ const InfoSection = ({
                             <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                             <Heading lightText={lightText}>{headline}</Heading>
                             <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                            <Link to='/sign-up'>
+                            <Link to="sign-up" spy={true} smooth={true} duration={1000}>
                                 <Button big fontBig primary={primary}>
                                     {buttonLabel}
                                 </Button>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import {Link as ScrollLink} from 'react-scroll';
 import styled from 'styled-components';
 import { Container } from '../../globalStyles';
 import { FaMoon, FaReact } from 'react-icons/fa'
@@ -94,13 +95,14 @@ border-bottom: 2px solid transparent;
 }
 `;
 
-export const NavLinks = styled(Link)`
+export const NavLinks = styled(ScrollLink)`
 color: #fff;
 display: flex;
 align-items: center;
 text-decoration: none;
 padding: 0.5rem 1rem;
 height: 100%;
+cursor: pointer;
 
 @media screen and (max-width: 960px){
     text-align: center;
@@ -125,7 +127,7 @@ export const NavItemBtn = styled.li`
 }
 `;
 
-export const NavBtnLink = styled(Link)`
+export const NavBtnLink = styled(ScrollLink)`
 display: flex;
 justify-content: center;
 align-items: center;

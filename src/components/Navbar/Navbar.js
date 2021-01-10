@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Button } from '../../globalStyles';
+
 import { 
     Nav, 
     NavbarContainer, 
@@ -19,16 +20,16 @@ import { IconContext } from 'react-icons/lib';
 import { useTheme } from '../theme';
 
 export const Navbar = () => {
-    const [click, setClick] = useState(false);
+    const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
     const [button, setButton] = useState(true);
     const [theme, themeToggler] = useTheme();
 
     const handleClick = () => {
-        setClick(!click);
+        setMobileMenuOpened(!mobileMenuOpened);
     }
 
     const hideMobileMenu = () => {
-        setClick(false);
+        setMobileMenuOpened(false);
     }
 
     const showButton = () => {
@@ -47,50 +48,49 @@ export const Navbar = () => {
         themeToggler();
         window.location.reload();
     }
-
     window.addEventListener('resize', showButton);
 
     return (
         <IconContext.Provider value={{color: '#fff'}}>
-            <Nav>
+            <Nav> 
                 <NavbarContainer>
                     <NavLogo to="/" onClick={hideMobileMenu}>
-                        <NavIcon/>
+                        <NavIcon />
                             COMPANY
-                    </NavLogo>
+                    </NavLogo >
                     <HamburgerMenuIcon onClick={handleClick}>
-                        {click ? <FaTimes/> : <FaBars/>}
+                        {mobileMenuOpened ? <FaTimes/> : <FaBars/>}
                     </HamburgerMenuIcon>
-                    <NavMenu onClick={hideMobileMenu} click={click}>
+                    <NavMenu onClick={hideMobileMenu} click={mobileMenuOpened}>
                         <NavItem onClick={toggleTheme}>
-                            <NavLinks>
+                            <NavLinks to="" onClick={toggleTheme}>
                                 <NavThemeIcon/>
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/'>
+                            <NavLinks to="info-section-1" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
                                 Home
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/services'>
-                                Services
+                            <NavLinks to="info-section-2" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
+                                    Services
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/products'>
+                            <NavLinks to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
                                 Products
                             </NavLinks>
                         </NavItem>
                         <NavItemBtn>
                             {button ? (
-                                <NavBtnLink to="/sign-up">
+                                <NavBtnLink to="sign-up" spy={true} smooth={true} duration={1000}>
                                     <Button primary={true}>
                                         SIGN UP
                                     </Button>
                                 </NavBtnLink>
                             ) : (
-                                <NavBtnLink to="/sign-up">
+                                <NavBtnLink to="sign-up" spy={true} smooth={true} duration={500} delay={400}>
                                     <Button onClick={hideMobileMenu} fontBig primary={false}>
                                         SIGN UP
                                     </Button>

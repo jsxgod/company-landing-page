@@ -1,14 +1,17 @@
 let isDarkMode = window.localStorage.getItem('theme') === 'light' ? false : true;
 
+let oppositeTheme = isDarkMode ? true : true;
+let sameTheme = isDarkMode ? true : false;
+
 export const infoSectionDataOne = {
-    primary: isDarkMode,
-    darkMode: isDarkMode,
+    primary: sameTheme,
+    darkMode: sameTheme,
     imgStart: false, 
-    lightTopLine: isDarkMode,
+    lightTopLine: sameTheme,
     topLine: 'Marketing Agency',
-    lightText: isDarkMode,
+    lightText: sameTheme,
     headline: 'Lead Generation Specialist for Online Businesses',
-    lightTextDesc: isDarkMode,
+    lightTextDesc: sameTheme,
     description: 'We help business owners increase their revenue. Our team of unique specialists can help you achieve your business goals.',
     buttonLabel: 'Get Started',
     img: require('../../assets/images/setup-analytics.svg').default,
@@ -17,14 +20,14 @@ export const infoSectionDataOne = {
 }
 
 export const infoSectionDataTwo = {
-    primary: !isDarkMode,
-    darkMode: !isDarkMode,
+    primary: oppositeTheme,
+    darkMode: oppositeTheme,
     imgStart: true, 
-    lightTopLine: !isDarkMode,
+    lightTopLine: oppositeTheme,
     topLine: 'Marketing Agency',
-    lightText: !isDarkMode,
+    lightText: oppositeTheme,
     headline: 'Reach heights never possible before',
-    lightTextDesc: !isDarkMode,
+    lightTextDesc: oppositeTheme,
     description: 'Let\'s make your company grow. With us your company\'s value will rise to the highest levels.',
     buttonLabel: 'Get Started',
     img: require('../../assets/images/buildings.jpg').default,
@@ -33,14 +36,14 @@ export const infoSectionDataTwo = {
 }
 
 export const infoSectionDataThree = {
-    primary: isDarkMode,
-    darkMode: isDarkMode,
+    primary: sameTheme,
+    darkMode: sameTheme,
     imgStart: false, 
-    lightTopLine: isDarkMode,
+    lightTopLine: sameTheme,
     topLine: 'Marketing Agency',
-    lightText: isDarkMode,
+    lightText: sameTheme,
     headline: 'Work with the best clients',
-    lightTextDesc: isDarkMode,
+    lightTextDesc: sameTheme,
     description: 'Let us find only the best clients for your business. With us your clients will always be satisfied - we carefully chose them with your company\'s product in mind.',
     buttonLabel: 'Get Started',
     img: require('../../assets/images/agreement.svg').default,
