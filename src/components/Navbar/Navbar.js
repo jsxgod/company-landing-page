@@ -24,12 +24,16 @@ export const Navbar = () => {
     const [button, setButton] = useState(true);
     const [theme, themeToggler] = useTheme();
 
-    const handleClick = () => {
-        setMobileMenuOpened(!mobileMenuOpened);
-    }
-
     const hideMobileMenu = () => {
         setMobileMenuOpened(false);
+    }
+
+    const handleSetHomePage = () => {
+        setMobileMenuOpened(false);
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+          }
+        window.location.assign("/");
     }
 
     const showButton = () => {
@@ -54,11 +58,11 @@ export const Navbar = () => {
         <IconContext.Provider value={{color: '#fff'}}>
             <Nav> 
                 <NavbarContainer>
-                    <NavLogo to="/" onClick={hideMobileMenu}>
+                    <NavLogo to="/" onClick={handleSetHomePage}>
                         <NavIcon />
                             COMPANY
                     </NavLogo >
-                    <HamburgerMenuIcon onClick={handleClick}>
+                    <HamburgerMenuIcon onClick={() => {setMobileMenuOpened(!mobileMenuOpened)}}>
                         {mobileMenuOpened ? <FaTimes/> : <FaBars/>}
                     </HamburgerMenuIcon>
                     <NavMenu onClick={hideMobileMenu} click={mobileMenuOpened}>
@@ -68,29 +72,34 @@ export const Navbar = () => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="info-section-1" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
+                            <NavLinks to="home" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
                                 Home
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="info-section-2" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
-                                    Services
+                            <NavLinks to="services" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
+                                Services
                             </NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
-                                Products
+                                Plans
+                            </NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to="clients" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
+                                Clients
                             </NavLinks>
                         </NavItem>
                         <NavItemBtn>
                             {button ? (
-                                <NavBtnLink to="sign-up" spy={true} smooth={true} duration={1000}>
+                                <NavBtnLink to="sign-up">
                                     <Button primary={true}>
                                         SIGN UP
                                     </Button>
                                 </NavBtnLink>
                             ) : (
-                                <NavBtnLink to="sign-up" spy={true} smooth={true} duration={500} delay={400}>
+                                <NavBtnLink to="sign-up">
                                     <Button onClick={hideMobileMenu} fontBig primary={false}>
                                         SIGN UP
                                     </Button>
