@@ -14,7 +14,7 @@ const SignUp = () => {
     <SignUpContainer>
         <SignUpSubscription>
             <SignUpSubHeading>
-                Join our montly membership to elevate your business starting today
+                Join our monthly membership to elevate your business starting today
             </SignUpSubHeading>
             <SignUpSubText>
                 You can unsubscribe at any given moment
