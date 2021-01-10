@@ -2,8 +2,7 @@ import React from 'react'
 import { IconContext } from 'react-icons/lib'
 
 import { Button } from '../../globalStyles';
-import { GiCrystalBars } from 'react-icons/gi';
-import { GiCutDiamond, GiRock } from 'react-icons/gi';
+import { GiQueenCrown, GiCutDiamond, GiRocket } from 'react-icons/gi';
 
 import {
   CardsSection,
@@ -20,72 +19,83 @@ import {
   CardFeature,
   CardBtnLink,
   NeonText,
+  GiRocketStyled,
 } from './Cards.elements';
+import { usePlan } from '../plan';
 
 const Cards = () => {
+  const [plan, setPlan] = usePlan();
+
+
+  const togglePlan = (plan) => {
+    setPlan(plan);
+}
+
     return (
       <IconContext.Provider value={{ color: '#a9b3c1', size: 64}}>
         <CardsSection>
           <CardsWrapper>
-            <CardsHeading>Our Services</CardsHeading>
+            <CardsHeading>Our Plans</CardsHeading>
             <CardsContainer>
-              <Card>
+              <Card onClick={() => togglePlan('starter')} isChosen={plan === 'starter' ? true : false}>
                 <CardInfo>
                   <CardIcon>
-                    <GiRock />
+                    <GiRocketStyled color={plan === 'starter' ? '#242424' : ''} />
                   </CardIcon>
-                  <CardPlan>Starter</CardPlan>
-                  <CardCost>$99.99</CardCost>
-                  <CardLength>per month</CardLength>
+                  <CardPlan isChosen={plan === 'starter' ? true : false}>Starter</CardPlan>
+                  <CardCost isChosen={plan === 'starter' ? true : false}>$99.99</CardCost>
+                  <CardLength isChosen={plan === 'starter' ? true : false}>per month</CardLength>
                   <CardFeatures>
-                    <CardFeature>100 New Users</CardFeature>
-                    <CardFeature>$10,000 Budget</CardFeature>
-                    <CardFeature>Retargeting analytics</CardFeature>
+                    <CardFeature isChosen={plan === 'starter' ? true : false}>100 New Users</CardFeature>
+                    <CardFeature isChosen={plan === 'starter' ? true : false}>$10,000 Budget</CardFeature>
+                    <CardFeature isChosen={plan === 'starter' ? true : false}>Retargeting analytics</CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
                   <Button primary>Choose Plan</Button>
                   </CardBtnLink>
                 </CardInfo>
               </Card>
-              <Card>
+              <Card onClick={() => togglePlan('advanced')} isChosen={plan === 'advanced' ? true : false}>
                 <CardInfo>
                   <CardIcon>
-                    <GiCrystalBars />
+                    <GiQueenCrown color={plan === 'advanced' ? '#242424' : ''} />
                   </CardIcon>
-                  <CardPlan>Advanced</CardPlan>
-                  <CardCost>$299.99</CardCost>
-                  <CardLength>per month</CardLength>
+                  <CardPlan isChosen={plan === 'advanced' ? true : false}>Advanced</CardPlan>
+                  <CardCost isChosen={plan === 'advanced' ? true : false}>$499.99</CardCost>
+                  <CardLength isChosen={plan === 'advanced' ? true : false}>per month</CardLength>
                   <CardFeatures>
-                    <CardFeature>1000 New Users</CardFeature>
-                    <CardFeature>$50,000 Budget</CardFeature>
-                    <CardFeature>Lead Gen Analytics</CardFeature>
+                    <CardFeature isChosen={plan === 'advanced' ? true : false}>10,000 New Users</CardFeature>
+                    <CardFeature isChosen={plan === 'advanced' ? true : false}>$100,000 Budget</CardFeature>
+                    <CardFeature isChosen={plan === 'advanced' ? true : false}>Lead Gen Analytics</CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
                     <Button primary>Choose Plan</Button>
                   </CardBtnLink>
                 </CardInfo>
               </Card>
-              <Card>
+              <Card onClick={() => togglePlan('premium')} isChosen={plan === 'premium' ? true : false}>
                 <CardInfo>
                   <CardIcon>
-                    <GiCutDiamond />
+                    <GiCutDiamond color={plan === 'premium' ? '#242424' : ''}/>
                   </CardIcon>
-                  <CardPlan>Premium</CardPlan>
-                  <CardCost>$1999.99</CardCost>
-                  <CardLength>per month</CardLength>
+                  <CardPlan isChosen={plan === 'premium' ? true : false}>Premium</CardPlan>
+                  <CardCost isChosen={plan === 'premium' ? true : false}>$1999.99</CardCost>
+                  <CardLength isChosen={plan === 'premium' ? true : false}>per month</CardLength>
                   <CardFeatures>
                     <CardFeature>
-                      <NeonText>Unlimited Users</NeonText>
+                      <NeonText isChosen={plan === 'premium' ? true : false}>Unlimited Users</NeonText>
                     </CardFeature>
                     <CardFeature>
-                      <NeonText>Unlimited Budget</NeonText>
+                      <NeonText isChosen={plan === 'premium' ? true : false}>Unlimited Budget</NeonText>
                     </CardFeature>
                     <CardFeature>
-                      <NeonText>24/7 Support</NeonText>
+                      <NeonText isChosen={plan === 'premium' ? true : false}>24/7 Support</NeonText>
                     </CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
-                    <Button primary>Choose Plan</Button>
+                    <Button primary>
+                      Choose Plan
+                    </Button>
                   </CardBtnLink>  
                 </CardInfo>
               </Card>

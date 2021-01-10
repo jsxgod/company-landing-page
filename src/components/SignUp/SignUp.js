@@ -11,8 +11,6 @@ import {
 } from './SignUp.elements'
 
 const SignUp = () => {
-    const [plan, setPlan] = useState({});
-
     return (
     <SignUpContainer>
         <SignUpSubscription>

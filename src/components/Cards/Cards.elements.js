@@ -1,5 +1,7 @@
+import { GiRocket } from 'react-icons/gi';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
+
 export const CardsSection = styled.div`
   padding: 100px 0 160px;
   display: flex;
@@ -43,7 +45,7 @@ export const CardsContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background: #242424;
+  background: ${({isChosen}) => (isChosen ? '#4FFE57' : '#242424')};
   width: 280px;
   height: 500px;
   text-decoration: none;
@@ -56,7 +58,7 @@ export const Card = styled.div`
   }
 
   &:hover {
-    transform: scale(1.06);
+    transform: ${({isChosen}) => (isChosen ? 'none' : 'scale(1.06)')};
     transition: all 0.3s ease-out;
     color: #1c2237;
   }
@@ -82,16 +84,24 @@ export const CardIcon = styled.div`
   margin: 24px 0;
 `;
 
+export const GiRocketStyled = styled(GiRocket)`
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+`;
+
 export const CardPlan = styled.h3`
+  color: ${({isChosen}) => (isChosen ? '#242424' : 'none')};
   margin-bottom: 5px;
   font-size: 24px;
 `;
 
 export const CardCost = styled.h4`
+  color: ${({isChosen}) => (isChosen ? '#242424' : '')};
   font-size: 40px;
 `;
 
 export const CardLength = styled.p`
+  color: ${({isChosen}) => (isChosen ? '#242424' : '')};
   font-size: 14px;
   margin-bottom: 24px;
 `;
@@ -106,6 +116,7 @@ export const CardFeatures = styled.ul`
 `;
 
 export const CardFeature = styled.li`
+  color: ${({isChosen}) => (isChosen ? '#242424' : '')};
   margin-bottom: 10px;
 `;
 
@@ -114,9 +125,7 @@ export const CardBtnLink = styled(Link)`
 `;
 
 export const NeonText = styled.text`
-  font-family: neon;
-  color: #4B59F7;
-  font-size: 1.5em;
+  color: ${({isChosen}) => (isChosen ? '#242424' : '#4B59F7')};
   text-shadow: 0 0 3vw #0467FB;
 
   
