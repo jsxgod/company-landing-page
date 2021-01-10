@@ -83,17 +83,17 @@ export const Navbar = () => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="services" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
+                            <NavLinks onClick={hideMobileMenu} to="services" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
                                 Services
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} >
+                            <NavLinks onClick={hideMobileMenu} to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} >
                                 Plans
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="clients" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
+                            <NavLinks onClick={hideMobileMenu} to="clients" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
                                 Clients
                             </NavLinks>
                         </NavItem>
