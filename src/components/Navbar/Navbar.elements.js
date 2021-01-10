@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {Link as ScrollLink} from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import styled from 'styled-components';
 import { Container } from '../../globalStyles';
 import { FaMoon, FaReact } from 'react-icons/fa'
@@ -127,7 +127,7 @@ export const NavItemBtn = styled.li`
 }
 `;
 
-export const NavBtnLink = styled(ScrollLink)`
+export const NavBtnLink = styled(Link)`
 display: flex;
 justify-content: center;
 align-items: center;
