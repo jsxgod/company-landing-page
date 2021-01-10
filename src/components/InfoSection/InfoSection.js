@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-scroll'
 import { Button, Container } from '../../globalStyles'
 import { InfoColumn, InfoRow, InfoSec, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img } from './InfoSection.elements'
