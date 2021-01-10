@@ -25,18 +25,21 @@ export const Navbar = () => {
     const [theme, themeToggler] = useTheme();
 
     const hideMobileMenu = () => {
-        console.log(window.location.pathname);
         console.log(theme);
-        setMobileMenuOpened(false);
+        if(mobileMenuOpened){
+            setMobileMenuOpened(false);
+        }
     }
-
+    
     const handleSetHomePage = () => {
-        console.log(window.location.pathname);
-        setMobileMenuOpened(false);
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-          }
-        window.location.assign("/");
+        if(mobileMenuOpened) {
+            setMobileMenuOpened(false);
+        } else {
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+            window.location.href = "/";
+        }
     }
 
     const showButton = () => {
@@ -75,22 +78,22 @@ export const Navbar = () => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="home" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
+                            <NavLinks onClick={handleSetHomePage} to="home" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
                                 Home
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="services" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
+                            <NavLinks to="services" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
                                 Services
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={hideMobileMenu}>
+                            <NavLinks to="cards" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} >
                                 Plans
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="clients" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0} onClick={window.location.pathname === '/' ? hideMobileMenu : handleSetHomePage}>
+                            <NavLinks to="clients" spy={true} smooth={true} duration={500} delay={mobileMenuOpened ?  400 : 0}>
                                 Clients
                             </NavLinks>
                         </NavItem>
