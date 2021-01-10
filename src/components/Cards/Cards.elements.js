@@ -45,7 +45,7 @@ export const CardsContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background: ${({isChosen}) => (isChosen ? '#4FFE57' : '#242424')};
+  background: ${({isChosen}) => (isChosen ? '#00FF7F' : '#242424')};
   width: 280px;
   height: 500px;
   text-decoration: none;
