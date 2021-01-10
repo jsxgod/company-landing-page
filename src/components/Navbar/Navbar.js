@@ -25,6 +25,7 @@ export const Navbar = () => {
     const [theme, themeToggler] = useTheme();
 
     const hideMobileMenu = () => {
+        console.log(theme);
         setMobileMenuOpened(false);
     }
 
