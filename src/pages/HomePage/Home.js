@@ -6,11 +6,11 @@ import { Element } from 'react-scroll';
 const Home = () => {
     return (
         <>
-            <Element name="info-section-1">
+            <Element name="home">
                 <InfoSection {...infoSectionDataOne} /> 
             </Element>
 
-            <Element name="info-section-2">
+            <Element name="services">
                 <InfoSection {...infoSectionDataTwo}/> 
             </Element>
            
@@ -18,7 +18,7 @@ const Home = () => {
                 <Cards />
            </Element>
 
-           <Element name="info-section-3">
+           <Element name="clients">
                 <InfoSection {...infoSectionDataThree}/>
            </Element>
         </>

@@ -1,4 +1,4 @@
-let isDarkMode = window.localStorage.getItem('theme') === 'light' ? false : true;
+let isDarkMode = window.localStorage.getItem('theme') === 'dark' ? true : false;
 
 let oppositeTheme = isDarkMode ? true : true;
 let sameTheme = isDarkMode ? true : false;
@@ -44,7 +44,7 @@ export const infoSectionDataThree = {
     lightText: sameTheme,
     headline: 'Work with the best clients',
     lightTextDesc: sameTheme,
-    description: 'Let us find only the best clients for your business. With us your clients will always be satisfied - we carefully chose them with your company\'s product in mind.',
+    description: 'Let us find only the best clients for your business. With us your clients will always be satisfied - we carefully choose them with your company\'s product in mind.',
     buttonLabel: 'Get Started',
     img: require('../../assets/images/agreement.svg').default,
     alt: 'Image',
