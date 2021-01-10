@@ -124,7 +124,7 @@ export const CardBtnLink = styled(Link)`
 
 `;
 
-export const NeonText = styled.text`
+export const NeonText = styled.p`
   color: ${({isChosen}) => (isChosen ? '#242424' : '#4B59F7')};
   text-shadow: 0 0 3vw #0467FB;
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { IconContext } from 'react-icons/lib'
 
 import { Button } from '../../globalStyles';
-import { GiQueenCrown, GiCutDiamond, GiRocket } from 'react-icons/gi';
+import { GiQueenCrown, GiCutDiamond } from 'react-icons/gi';
 
 import {
   CardsSection,
@@ -51,7 +51,7 @@ const Cards = () => {
                     <CardFeature isChosen={plan === 'starter' ? true : false}>Retargeting analytics</CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
-                  <Button primary>Choose Plan</Button>
+                  <Button primary onClick={() => plan === 'starter' ? ()=>{} : togglePlan('starter')}>Choose Plan</Button>
                   </CardBtnLink>
                 </CardInfo>
               </Card>
@@ -69,7 +69,7 @@ const Cards = () => {
                     <CardFeature isChosen={plan === 'advanced' ? true : false}>Lead Gen Analytics</CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
-                    <Button primary>Choose Plan</Button>
+                    <Button primary onClick={() => plan === 'advanced' ? ()=>{} : togglePlan('advanced')}>Choose Plan</Button>
                   </CardBtnLink>
                 </CardInfo>
               </Card>
@@ -93,9 +93,7 @@ const Cards = () => {
                     </CardFeature>
                   </CardFeatures>
                   <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
-                    <Button primary>
-                      Choose Plan
-                    </Button>
+                    <Button primary onClick={() => plan === 'premium' ? ()=>{} : togglePlan('premium')}>Choose Plan</Button>
                   </CardBtnLink>  
                 </CardInfo>
               </Card>
