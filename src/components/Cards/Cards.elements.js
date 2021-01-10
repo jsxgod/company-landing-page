@@ -1,6 +1,5 @@
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
-
 export const CardsSection = styled.div`
   padding: 100px 0 160px;
   display: flex;
@@ -43,7 +42,7 @@ export const CardsContainer = styled.div`
   }
 `;
 
-export const Card = styled(Link)`
+export const Card = styled.div`
   background: #242424;
   width: 280px;
   height: 500px;
@@ -108,4 +107,20 @@ export const CardFeatures = styled.ul`
 
 export const CardFeature = styled.li`
   margin-bottom: 10px;
+`;
+
+export const CardBtnLink = styled(Link)`
+
+`;
+
+export const NeonText = styled.text`
+  font-family: neon;
+  color: #4B59F7;
+  font-size: 1.5em;
+  text-shadow: 0 0 3vw #0467FB;
+
+  
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
 `;

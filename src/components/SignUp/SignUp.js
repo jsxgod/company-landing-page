@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { Button } from '../../globalStyles'
 import {
     SignUpContainer,
@@ -10,6 +11,8 @@ import {
 } from './SignUp.elements'
 
 const SignUp = () => {
+    const [plan, setPlan] = useState({});
+
     return (
     <SignUpContainer>
         <SignUpSubscription>

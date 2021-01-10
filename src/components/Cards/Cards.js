@@ -2,10 +2,8 @@ import React from 'react'
 import { IconContext } from 'react-icons/lib'
 
 import { Button } from '../../globalStyles';
-import { AiFillThunderbolt } from 'react-icons/ai';
 import { GiCrystalBars } from 'react-icons/gi';
 import { GiCutDiamond, GiRock } from 'react-icons/gi';
-import { GiFloatingCrystal } from 'react-icons/gi';
 
 import {
   CardsSection,
@@ -20,6 +18,8 @@ import {
   CardLength,
   CardFeatures,
   CardFeature,
+  CardBtnLink,
+  NeonText,
 } from './Cards.elements';
 
 const Cards = () => {
@@ -29,12 +29,12 @@ const Cards = () => {
           <CardsWrapper>
             <CardsHeading>Our Services</CardsHeading>
             <CardsContainer>
-              <Card to="sign-up" spy={true} smooth={true} duration={500}>
+              <Card>
                 <CardInfo>
                   <CardIcon>
                     <GiRock />
                   </CardIcon>
-                  <CardPlan>Starter Pack</CardPlan>
+                  <CardPlan>Starter</CardPlan>
                   <CardCost>$99.99</CardCost>
                   <CardLength>per month</CardLength>
                   <CardFeatures>
@@ -42,15 +42,17 @@ const Cards = () => {
                     <CardFeature>$10,000 Budget</CardFeature>
                     <CardFeature>Retargeting analytics</CardFeature>
                   </CardFeatures>
+                  <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
                   <Button primary>Choose Plan</Button>
+                  </CardBtnLink>
                 </CardInfo>
               </Card>
-              <Card to="sign-up" spy={true} smooth={true} duration={500}>
+              <Card>
                 <CardInfo>
                   <CardIcon>
                     <GiCrystalBars />
                   </CardIcon>
-                  <CardPlan>Gold Rush</CardPlan>
+                  <CardPlan>Advanced</CardPlan>
                   <CardCost>$299.99</CardCost>
                   <CardLength>per month</CardLength>
                   <CardFeatures>
@@ -58,23 +60,33 @@ const Cards = () => {
                     <CardFeature>$50,000 Budget</CardFeature>
                     <CardFeature>Lead Gen Analytics</CardFeature>
                   </CardFeatures>
-                  <Button primary>Choose Plan</Button>
+                  <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
+                    <Button primary>Choose Plan</Button>
+                  </CardBtnLink>
                 </CardInfo>
               </Card>
-              <Card to="sign-up" spy={true} smooth={true} duration={500}>
+              <Card>
                 <CardInfo>
                   <CardIcon>
                     <GiCutDiamond />
                   </CardIcon>
-                  <CardPlan>Diamond Kings</CardPlan>
-                  <CardCost>$999.99</CardCost>
+                  <CardPlan>Premium</CardPlan>
+                  <CardCost>$1999.99</CardCost>
                   <CardLength>per month</CardLength>
                   <CardFeatures>
-                    <CardFeature>Unlimited Users</CardFeature>
-                    <CardFeature>Unlimited Budget</CardFeature>
-                    <CardFeature>24/7 Support</CardFeature>
+                    <CardFeature>
+                      <NeonText>Unlimited Users</NeonText>
+                    </CardFeature>
+                    <CardFeature>
+                      <NeonText>Unlimited Budget</NeonText>
+                    </CardFeature>
+                    <CardFeature>
+                      <NeonText>24/7 Support</NeonText>
+                    </CardFeature>
                   </CardFeatures>
-                  <Button primary>Choose Plan</Button>
+                  <CardBtnLink to="sign-up" spy={true} smooth={true} duration={500}>
+                    <Button primary>Choose Plan</Button>
+                  </CardBtnLink>  
                 </CardInfo>
               </Card>
             </CardsContainer>
