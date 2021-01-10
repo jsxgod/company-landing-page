@@ -25,11 +25,13 @@ export const Navbar = () => {
     const [theme, themeToggler] = useTheme();
 
     const hideMobileMenu = () => {
+        console.log(window.location.pathname);
         console.log(theme);
         setMobileMenuOpened(false);
     }
 
     const handleSetHomePage = () => {
+        console.log(window.location.pathname);
         setMobileMenuOpened(false);
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
