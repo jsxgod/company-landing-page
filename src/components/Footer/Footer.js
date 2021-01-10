@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { Button } from '../../globalStyles'
 import {
     FooterContainer,
     FooterLinksContainer,
@@ -27,7 +26,7 @@ const Footer = () => {
                         <FooterLinkTitle>
                             About Us
                         </FooterLinkTitle>
-                        <FooterLink to='/sign-up'>How it works</FooterLink>
+                        <FooterLink to='/'>How it works</FooterLink>
                         <FooterLink to='/'>Testemonials</FooterLink>
                         <FooterLink to='/'>Careers</FooterLink>
                         <FooterLink to='/'>Investors</FooterLink>
@@ -37,7 +36,7 @@ const Footer = () => {
                         <FooterLinkTitle>
                             Contact Us
                         </FooterLinkTitle>
-                        <FooterLink to='/sign-up'>How it works</FooterLink>
+                        <FooterLink to='/'>How it works</FooterLink>
                         <FooterLink to='/'>Testemonials</FooterLink>
                         <FooterLink to='/'>Careers</FooterLink>
                         <FooterLink to='/'>Investors</FooterLink>
@@ -49,7 +48,7 @@ const Footer = () => {
                         <FooterLinkTitle>
                             Videos
                         </FooterLinkTitle>
-                        <FooterLink to='/sign-up'>How it works</FooterLink>
+                        <FooterLink to='/'>How it works</FooterLink>
                         <FooterLink to='/'>Testemonials</FooterLink>
                         <FooterLink to='/'>Careers</FooterLink>
                         <FooterLink to='/'>Investors</FooterLink>
@@ -59,7 +58,7 @@ const Footer = () => {
                         <FooterLinkTitle>
                             Social Media
                         </FooterLinkTitle>
-                        <FooterLink to='/sign-up'>How it works</FooterLink>
+                        <FooterLink to='/'>How it works</FooterLink>
                         <FooterLink to='/'>Testemonials</FooterLink>
                         <FooterLink to='/'>Careers</FooterLink>
                         <FooterLink to='/'>Investors</FooterLink>
@@ -69,22 +68,22 @@ const Footer = () => {
             </FooterLinksContainer>
             <SocialMedia>
                 <SocialMediaWrapper>
-                    <SocialLogo to='/'>
+                    <SocialLogo to='home' spy={true} smooth={true} duration={500}>
                         <SocialIcon/>
                         COMPANY
                     </SocialLogo>
                     <WebsiteRights>COMPANY © 2021</WebsiteRights>
                     <SocialIcons>
-                        <SocialIconLink href='/' target='_blank' aria-label="Facebook">
+                        <SocialIconLink href='https://www.facebook.com' target='_blank' aria-label="Facebook">
                             <FaFacebook />
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' aria-label="Instagram">
+                        <SocialIconLink href='https://www.instagram.com' target='_blank' aria-label="Instagram">
                             <FaInstagram />
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' aria-label="Twitter">
+                        <SocialIconLink href='https://www.twitter.com' target='_blank' aria-label="Twitter">
                             <FaTwitter />
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' aria-label="Youtube" rel='noopener noreferrer'>
+                        <SocialIconLink href='https://www.youtube.com' target='_blank' aria-label="Youtube" rel='noopener noreferrer'>
                             <FaYoutube />
                         </SocialIconLink>
                     </SocialIcons>

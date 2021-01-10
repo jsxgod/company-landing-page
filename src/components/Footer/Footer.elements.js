@@ -1,5 +1,6 @@
 import { FaReact } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link as ScrollLink} from 'react-scroll';
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
@@ -51,7 +52,7 @@ export const FooterLinkTitle = styled.h2`
     margin-bottom: 16px;
 `;
 
-export const FooterLink = styled(Link)`
+export const FooterLink = styled(ScrollLink)`
     color: #fff;
     text-decoration: none;
     margin-bottom: 0.5rem;
@@ -80,7 +81,7 @@ export const SocialMediaWrapper = styled.div`
     }
 `;
 
-export const SocialLogo = styled(Link)`
+export const SocialLogo = styled(ScrollLink)`
     color: #fff;
     justify-self: start;
     cursor: pointer;
@@ -107,7 +108,7 @@ export const SocialIcons = styled.div`
     width: 240px;
 `;
 
-export const SocialIconLink = styled(Link)`
+export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 24px;
 
