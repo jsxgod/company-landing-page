@@ -1,6 +1,6 @@
 # https://landing-page.jsxgod.vercel.app/
 
-# Responsive Landing Page template for an illusory tech/marketing field Company<br/>that offers multi-level, monthly subscription based pricing.
+# Responsive Landing Page template for a tech/marketing field Company<br/>that offers multi-level, monthly subscription based pricing.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
