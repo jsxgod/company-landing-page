@@ -1,4 +1,5 @@
-# https://landing-page.jsxgod.vercel.app/
+# Template Company Landing Page
+https://landing-page.jsxgod.vercel.app/
 
 # Responsive Landing Page template for a tech/marketing field Company that offers multi-level, monthly subscription based pricing.
 
